@@ -93,7 +93,7 @@ public class Terminal {
             System.out.println("======= Help =======");
             System.out.println("create | to Create Server");
             System.out.println("setname <Name> | to SetFolderName");
-            System.out.println("download ( paper | spigot | bukkit | vanilla ) | to SetFolderName");
+            System.out.println("download ( paper | spigot | bukkit | vanilla ) | to Download Server");
         }else {
             System.out.println("Unknown Commands!");
             System.out.println("Please Type: help");
@@ -105,7 +105,7 @@ public class Terminal {
         try {
             URI oURL = new URI(web);
             desktop.browse(oURL);
-        } catch (URISyntaxException | IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
