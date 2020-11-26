@@ -30,8 +30,21 @@ public class FileManager {
             }
             writer.close();
         } catch (IOException e) {
-            System.out.println("Error to Create PrintFile!!");
+            System.out.println("Error to Create Run File!!");
             e.printStackTrace();
         }
+        if (ServerTools.eula) {
+            File eulafile = new File(ServerTools.fileprefix + "eula.txt");
+            try {
+                PrintWriter writer = new PrintWriter(new FileWriter(eulafile, true));
+                writer.println("#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).");
+                writer.println("eula=true");
+                writer.close();
+            } catch (IOException e) {
+                System.out.println("Error to Create Eula File!!");
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Done!");
     }
 }
