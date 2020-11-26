@@ -6,6 +6,7 @@ import java.net.URI;
 public class ServerTools {
 
     public static String fileprefix = "NewServer/";
+    public static boolean eula = false;
 
     public static void main(String[] args) {
         if (args.length == 1) {
