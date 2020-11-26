@@ -89,11 +89,26 @@ public class Terminal {
                 System.out.println("Unknown Commands!");
                 System.out.println("Please Type: help");
             }
+        }else if (cmd.startsWith("eula")) {
+            Scanner obj = new Scanner(System.in);
+            System.out.println("Type (y) you are indicating your agreement to Minecraft EULA (https://account.mojang.com/documents/minecraft_eula)");
+            runWeb("https://account.mojang.com/documents/minecraft_eula");
+            System.out.print("Minecraft Eula (y/n): ");
+            String yorn = obj.nextLine();
+            if (yorn.equals("y")) {
+                ServerTools.eula = true;
+            }else if (yorn.equals("n")) {
+                ServerTools.eula = false;
+            }else {
+                System.out.println("Unknown Commands!");
+                System.out.println("Please Type: help");
+            }
         }else if (cmd.startsWith("help")) {
             System.out.println("======= Help =======");
             System.out.println("create | to Create Server");
             System.out.println("setname <Name> | to SetFolderName");
             System.out.println("download ( paper | spigot | bukkit | vanilla ) | to Download Server");
+            System.out.println("eula ( y/n ) | to Set Eula");
         }else {
             System.out.println("Unknown Commands!");
             System.out.println("Please Type: help");
