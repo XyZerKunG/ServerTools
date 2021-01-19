@@ -1,9 +1,7 @@
 package org.xyzer.servertools;
 
 import java.awt.*;
-import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Scanner;
 
 public class Terminal {
