@@ -15,23 +15,40 @@ public class FileManager {
         try {
             Files.copy(serverjar.toPath(), filejar.toPath());
         } catch (IOException e) {
-            System.out.println("Error to Copy File..");
-            e.printStackTrace();
+            System.out.println("Error to Copy File or You already have file!");
         }
-        File runfile = new File(ServerTools.fileprefix + "run.bat");
-        try {
-            PrintWriter writer = new PrintWriter(new FileWriter(runfile, true));
-            writer.println("@echo off");
-            writer.println("Title " + Title);
-            if (nogui) {
-                writer.println("java -jar " + '"' + serverjar.getName() + '"' + " nogui");
-            }else {
-                writer.println("java -jar " + '"' + serverjar.getName() + '"');
+        String os = System.getProperty("os.name");
+        if (os.toLowerCase().startsWith("windows")) {
+            File runfile = new File(ServerTools.fileprefix + "run.bat");
+            try {
+                PrintWriter writer = new PrintWriter(new FileWriter(runfile, true));
+                writer.println("@echo off");
+                writer.println("Title " + Title);
+                if (nogui) {
+                    writer.println("java -jar " + '"' + serverjar.getName() + '"' + " nogui");
+                }else {
+                    writer.println("java -jar " + '"' + serverjar.getName() + '"');
+                }
+                writer.close();
+            } catch (IOException e) {
+                System.out.println("Error to Create Run File!!");
+                e.printStackTrace();
             }
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Error to Create Run File!!");
-            e.printStackTrace();
+        }else {
+            File runfile = new File(ServerTools.fileprefix + "run.sh");
+            try {
+                PrintWriter writer = new PrintWriter(new FileWriter(runfile, true));
+                writer.println("set echo off");
+                if (nogui) {
+                    writer.println("java -jar " + '"' + serverjar.getName() + '"' + " nogui");
+                }else {
+                    writer.println("java -jar " + '"' + serverjar.getName() + '"');
+                }
+                writer.close();
+            } catch (IOException e) {
+                System.out.println("Error to Create Run File!!");
+                e.printStackTrace();
+            }
         }
         if (ServerTools.eula) {
             File eulafile = new File(ServerTools.fileprefix + "eula.txt");
@@ -45,6 +62,6 @@ public class FileManager {
                 e.printStackTrace();
             }
         }
-        System.out.println("Done!");
+        System.out.println("Setup Done!");
     }
 }
