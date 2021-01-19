@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="836.0" style="-fx-background-color: #232223; -fx-border-color: #3C3B3C;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.xyzer.servertools.ServerTools">
+    <children>
+        <MenuBar prefHeight="25.0" prefWidth="836.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false">
+                    <graphic>
+                        <Circle fill="#ff554e" onMouseClicked="#close" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                    <graphic>
+                        <Circle fill="#ffbc2f" onMouseClicked="#min" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                    <graphic>
+                        <Circle fill="#acabac" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                    <graphic>
+                        <Label onMouseClicked="#info" text="Server Tool">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </graphic>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                    <graphic>
+                        <Label fx:id="status">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Label>
+                    </graphic>
+                </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label fx:id="downloadtext">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Menu>
+            </menus>
+        </MenuBar>
+      <AnchorPane layoutX="82.0" layoutY="70.0" prefHeight="373.0" prefWidth="672.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10 10 10 10;" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="70.0">
+         <children>
+            <Circle fill="#2fff00" layoutX="336.0" layoutY="156.0" radius="71.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="10.0" />
+            <Label layoutX="288.0" layoutY="110.0" text=" ✔" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="64.0" />
+               </font>
+            </Label>
+              <Button fx:id="runbutton" layoutX="285.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#onRun" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #0B84FF; -fx-background-radius: 20 20 20 20;" text="Setup" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="285.0">
+                  <font>
+                      <Font name="System Bold" size="18.0" />
+                  </font>
+              </Button>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

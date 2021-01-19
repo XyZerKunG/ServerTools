@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="512.0" maxWidth="836.0" minHeight="512.0" minWidth="836.0" prefHeight="512.0" prefWidth="836.0" style="-fx-background-color: #232223; -fx-border-color: #3C3B3C;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.xyzer.servertools.ServerTools">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="836.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Circle fill="#ff554e" onMouseClicked="#close" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </graphic>
+            </Menu>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Circle fill="#ffbc2f" onMouseClicked="#min" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </graphic>
+          </Menu>
+          <Menu mnemonicParsing="false">
+               <graphic>
+                  <Circle fill="#acabac" radius="7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </graphic>
+          </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label onMouseClicked="#info" text="Server Tool">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </graphic>
+            </Menu>
+           <Menu mnemonicParsing="false">
+              <graphic>
+                 <Label fx:id="status">
+                    <font>
+                       <Font name="System Bold" size="13.0" />
+                    </font>
+                 </Label>
+              </graphic>
+           </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutX="326.0" layoutY="187.0" prefHeight="138.0" prefWidth="213.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <Label layoutX="61.0" layoutY="14.0" text="Paper MC">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#getpaper" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #0B84FF; -fx-background-radius: 20 20 20 20;" text="Selected" textFill="white">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="paperlist" layoutX="32.0" layoutY="44.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Button fx:id="nextpage" layoutX="720.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#setuppage" prefHeight="36.0" prefWidth="102.0" style="-fx-background-color: #ACABAC; -fx-background-radius: 20 20 20 20;" text="Next" textFill="white" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Pane layoutX="539.0" layoutY="187.0" prefHeight="138.0" prefWidth="213.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 0 10 10 0;">
+         <children>
+            <Label layoutX="61.0" layoutY="14.0" text="Spigot MC">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#getspigot" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #0B84FF; -fx-background-radius: 20 20 20 20;" text="Selected" textFill="white">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="spigotlist" layoutX="32.0" layoutY="44.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="113.0" layoutY="187.0" prefHeight="138.0" prefWidth="213.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10 0 0 10;">
+         <children>
+            <Label layoutX="38.0" layoutY="14.0" text="Mojang Server">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#getmojang" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #0B84FF; -fx-background-radius: 20 20 20 20;" text="Selected" textFill="white">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="mojanglist" layoutX="32.0" layoutY="44.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="326.0" layoutY="340.0" prefHeight="138.0" prefWidth="213.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label layoutX="61.0" layoutY="14.0" text="Snapshot">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="10.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#getsnapshot" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #0B84FF; -fx-background-radius: 20 20 20 20;" text="Selected" textFill="white">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="snapshotlist" layoutX="32.0" layoutY="44.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
